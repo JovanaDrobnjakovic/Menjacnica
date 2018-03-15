@@ -12,6 +12,9 @@ public class Valuta {
 	}
 
 	public void setNazivValute(String nazivValute) {
+		if (nazivValute == null) {
+			throw new RuntimeException("Uneli ste prazan string");
+			}
 		this.nazivValute = nazivValute;
 	}
 
@@ -20,6 +23,9 @@ public class Valuta {
 	}
 
 	public void setSkraceniNazivValute(String skraceniNazivValute) {
+		if (skraceniNazivValute == null) {
+			throw new RuntimeException("Uneli ste prazan string");
+			}
 		this.skraceniNazivValute = skraceniNazivValute;
 	}
 
@@ -28,6 +34,9 @@ public class Valuta {
 	}
 
 	public void setProdajniKurs(double prodajniKurs) {
+		if (prodajniKurs < 0) {
+			throw new RuntimeException("Greska");
+			}
 		this.prodajniKurs = prodajniKurs;
 	}
 
@@ -36,6 +45,9 @@ public class Valuta {
 	}
 
 	public void setSrednjiKurs(double srednjiKurs) {
+		if (srednjiKurs < 0) {
+			throw new RuntimeException("Greska");
+			}
 		this.srednjiKurs = srednjiKurs;
 	}
 
@@ -44,6 +56,9 @@ public class Valuta {
 	}
 
 	public void setKupovniKurs(double kupovniKurs) {
+		if (kupovniKurs < 0) {
+			throw new RuntimeException("Greska");
+			}
 		this.kupovniKurs = kupovniKurs;
 	}
 
