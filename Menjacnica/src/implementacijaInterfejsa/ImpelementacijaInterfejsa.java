@@ -1,24 +1,42 @@
 package implementacijaInterfejsa;
 
+import java.util.LinkedList;
+
+import Valuta.Valuta;
 import interfejsMenjacnica.InterfejsMenjacnica;
 
 public class ImpelementacijaInterfejsa implements InterfejsMenjacnica {
-
-	@Override
+LinkedList<Valuta> valute = new LinkedList<Valuta>();
+	
 	public void dodajKurs(double prodajniKurs, double srednjiKurs, double kupovniKurs, String nazivValute) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < valute.size(); i++) {
+			if(valute.get(i).getNazivValute().equals(nazivValute)) {
+				valute.get(i).setKupovniKurs(kupovniKurs);
+				valute.get(i).setProdajniKurs(prodajniKurs);
+				valute.get(i).setSrednjiKurs(srednjiKurs);
+			}
+		}
 		
 	}
 
-	@Override
+	
 	public void obrisiKurs(String nazivValute) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < valute.size(); i++) {
+			if(valute.get(i).getNazivValute().equals(nazivValute)) {
+				valute.get(i).setKupovniKurs(0);
+				valute.get(i).setProdajniKurs(0);
+				valute.get(i).setSrednjiKurs(0);
+			}
+		}
 		
 	}
 
-	@Override
+	
 	public double vratiKurs(String nazivValute) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i <valute.size(); i++) {
+			if(valute.get(i).getNazivValute().equals(nazivValute))
+				return valute.get(i).getSrednjiKurs();
+		}
 		return 0;
 	}
 
